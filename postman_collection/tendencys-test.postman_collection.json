@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "b3fd93ff-5eb0-4644-9021-43c9435831dc",
+		"name": "tendencys-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - CREATE APLICATION",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"my-application-three\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/aplications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"aplications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - CREATE TOKEN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"6307e54f4dc20ce3abd8f400\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - READ ALL LOGS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDdlNTRmNGRjMjBjZTNhYmQ4ZjQwMCIsIm5hbWUiOiJteS1hcHBsaWNhdGlvbi10aHJlZSIsImlhdCI6MTY2MTQ2MTk4MSwiZXhwIjoxNjYyNjcxNTgxfQ.2KPSp_p0pi-itbu0d2eXZ8nRRGVZMsE6hxG7EBLJHW0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - CREATE LOG",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDdlNTRmNGRjMjBjZTNhYmQ4ZjQwMCIsIm5hbWUiOiJteS1hcHBsaWNhdGlvbi10aHJlZSIsImlhdCI6MTY2MTQ2MTk4MSwiZXhwIjoxNjYyNjcxNTgxfQ.2KPSp_p0pi-itbu0d2eXZ8nRRGVZMsE6hxG7EBLJHW0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"application_id\": \"6307e54f4dc20ce3abd8f400\",\n    \"type\": \"error\",\n    \"priority\": \"low\",\n    \"path\": \"/messages\",\n    \"message\": \"error at send message\",\n    \"request\": {\n        \"method\": \"POST\"\n    },\n    \"response\": {\n        \"error\": \"not fount\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - READ LOG BY ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDdlNTRmNGRjMjBjZTNhYmQ4ZjQwMCIsIm5hbWUiOiJteS1hcHBsaWNhdGlvbi10aHJlZSIsImlhdCI6MTY2MTQ2MTk4MSwiZXhwIjoxNjYyNjcxNTgxfQ.2KPSp_p0pi-itbu0d2eXZ8nRRGVZMsE6hxG7EBLJHW0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/logs/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"logs",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6307e6e665db967fe5d7618d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - UPDATE LOG",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDdlNTRmNGRjMjBjZTNhYmQ4ZjQwMCIsIm5hbWUiOiJteS1hcHBsaWNhdGlvbi10aHJlZSIsImlhdCI6MTY2MTQ2MTk4MSwiZXhwIjoxNjYyNjcxNTgxfQ.2KPSp_p0pi-itbu0d2eXZ8nRRGVZMsE6hxG7EBLJHW0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"warning\",\n    \"priority\": \"low\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/logs/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"logs",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6307e6e665db967fe5d7618d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - DELETE LOG",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDdlNTRmNGRjMjBjZTNhYmQ4ZjQwMCIsIm5hbWUiOiJteS1hcHBsaWNhdGlvbi10aHJlZSIsImlhdCI6MTY2MTQ2MTk4MSwiZXhwIjoxNjYyNjcxNTgxfQ.2KPSp_p0pi-itbu0d2eXZ8nRRGVZMsE6hxG7EBLJHW0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/logs/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"logs",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6307e6e665db967fe5d7618d"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
